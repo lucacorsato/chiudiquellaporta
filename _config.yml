@@ -1,7 +1,7 @@
 permalink: pretty
 markdown: kramdown
 highlighter: pygments
-url: http://lucacorsato.github.io/chiudiquellaporta
+url: 
 baseurl: /
 
 title: projectopendata playbook
