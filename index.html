@@ -1,0 +1,99 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>projectopendata Playbook</title>
+  <meta charset='UTF-8'/>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel='shortcut icon' href='{{site.baseurl}}/img/favicon.ico' type='image/x-icon' />
+  <link href='//fonts.googleapis.com/css?family=Georgia:400,300,700|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+  <link href='{{site.baseurl}}/assets/css/styles.css' rel='stylesheet' />
+</head>
+
+<body>
+
+<div id="navigation_bar">
+   <div class="outer_container">
+    <div class="inner_container">
+
+      <a href="#introduction"><h4>projectopendata playbook</h4></a>
+      <ul class="nav">
+        {% for play in site.plays %}
+          <li class="play_square"><a href="#play{{ play.id }}" title="View Play {{ play.id }}: {{ play.title }}">{{ play.id }}</a></li>
+        {% endfor %}
+      </ul>
+      <div id="menu_icon">
+        <a href="#plays_index_anchor" title="Return to Index"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="introduction">
+  <div class="outer_container">
+    <div class="inner_container">
+      <a id="osd logo" href="http://opensensorsdata.it" title="Link to opensensorsdata"><img src='{{site.baseurl}}/assets/images/osd_simple_100.svg' alt="logo opensensorsdata"></a>
+      <a id="pod logo" href="" title="Link to projectopendata"><img src='{{site.baseurl}}/assets/images/projectopendata_simple.svg' alt="logo projectopendata"></a>
+      {% capture introduction %}{% include introduction.md %}{% endcapture %}
+      {{ introduction | markdownify }}
+      <div class="button">
+        <a href="#plays_index_anchor" title="Guarda gli schemi">GUARDA GLI SCHEMI</a>
+      </div>
+      <div class="button">
+        <a href="https://github.com/opensensorsdata/playbook#readme" title="Aiutaci a migliorare gli schemi">AIUTACI A MIGLIORARE GLI SCHEMI</a>
+      </div>
+      <!--<div class="button">
+        <a href="http://projectopendata.com" title="Vai a projectopendata">VAI A PROJECTOPENDATA</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div id="plays_index">
+  <div class="outer_container">
+    <div class="inner_container">
+      <a class="anchor_offset" id="plays_index_anchor"></a>
+      <h1>Schemi di projectopendata</h1>
+      <div class="columns">
+        <ol>
+        {% for play in site.plays %}
+          <li><a href="#play{{ play.id }}" title="View Play {{ play.id }}">{{ play.title }}</a></li>
+        {% endfor %}
+        </ol>
+      </div>
+      <div class="button">
+        <a href="#play1" title="View the In Detail">STUDIA GLI SCHEMI</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="plays" class="outer_container">
+  {% for play in site.plays %}
+    <div class="inner_container">
+      <a class="anchor_offset" id="play{{ play.id }}"></a>
+      <h5>PLAY {{ play.id }}</h5>
+      <h2>{{ play.title }}</h2>
+
+      {{ play.output }}
+    </div>
+  {% endfor %}
+</div>
+
+  <div class="outer_container">
+    <div id="footer" class="footer">
+      <p class="info"><img src="/assets/images/osd_black_20.svg" alt="opensensorsdata logo" /> {{ site.title }} is  brought to you by {{ site.author.name }} under <a href="http://creativecommons.org/licenses/by-sa/4.0/"><i class="fa fa-cc"></i>-BY-SA</a></p> 
+      <p class="info"><i class="fa fa-copyright"></i> {{ site.time | date: '%Y' }} <a href="opensensorsdata.it">opensensorsdata srl</a> <strong>VAT IVA</strong> 04294660271</p>
+      <p class="info"><a href="mailto:contact@opensensorsdata.it"><i class="fa fa-share"></i> contact@opensensorsdata.it</a></p>
+      <p class="info">site version {{ site.version }} // aggiornato al {{ site.date }}</p>
+    </div>
+  </div>
+
+
+<script src='{{site.baseurl}}/assets/js/jquery-1.11.1.min.js'></script>
+<script src='{{site.baseurl}}/assets/js/scrollspy.js'></script>
+<script src='{{site.baseurl}}/assets/js/site.js'></script>
+<script id="_fed_an_js_tag" type="text/javascript" src="{{site.baseurl}}/assets/js/federated-analytics.all.min.js?agency=GSA&sub-agency=OGP"></script>
+</body>
+</html>

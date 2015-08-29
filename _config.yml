@@ -1,0 +1,20 @@
+permalink: pretty
+markdown: kramdown
+highlighter: pygments
+url: http://opensensorsdata.it
+
+title: projectopendata playbook
+
+author:
+ name: 'opensensorsdata crew'
+ url:  http://opensensorsdata.it
+
+version: 1.0
+date: '2015_09'
+
+
+collections:
+  - plays
+
+sass:
+    sass_dir: assets/_sass
